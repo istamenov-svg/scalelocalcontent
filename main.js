@@ -1,20 +1,39 @@
 // ScaleLocalContent — Global JS
 
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.addEventListener('DOMContentLoaded', function() {
 
-// Form handler
-function handleSubmit(e) {
-    e.preventDefault();
-    alert('Thank you! We\'ll respond within 24 hours with a project scope.');
-}
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Mobile nav
-function toggleNav() {
-    document.querySelector('.nav-links').classList.toggle('mobile-open');
-}
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+            const isOpen = navLinks.classList.toggle('mobile-open');
+            navToggle.textContent = isOpen ? '✕' : '☰';
+        });
+
+        // Close mobile nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('mobile-open');
+                navToggle.textContent = '☰';
+            });
+        });
+
+        // Close mobile nav on resize above mobile breakpoint
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('mobile-open');
+                navToggle.textContent = '☰';
+            }
+        });
+    }
+});

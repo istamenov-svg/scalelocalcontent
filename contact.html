@@ -19,10 +19,11 @@
         <li><a href="blog/">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Get Started</a></li>
     </ul>
-    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    <button class="nav-toggle">☰</button>
 </nav>
 
 <section class="page-hero">
+    <div class="hero-abstract"><div class="orb-1"></div><div class="orb-2"></div><div class="grid-pattern"></div><div class="line-accent"></div><div class="line-accent-2"></div><div class="dots"></div><div class="ring"></div><div class="ring-2"></div></div>
     <div class="page-hero-inner">
         <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
         <h1>Let's scope your<br><em>project.</em></h1>
@@ -32,7 +33,7 @@
 
 <section>
     <div class="section-inner">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;">
+        <div class="two-col" style="max-width:1100px;margin:0 auto;">
             <div class="fade-up">
                 <div style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 0;color:var(--text-secondary);font-size:0.9rem;">
                     <div style="width:36px;height:36px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;">✉</div>
@@ -54,51 +55,56 @@
                 </div>
             </div>
             <div class="fade-up">
-                <form class="contact-form" onsubmit="handleSubmit(event)">
+                <!-- FORMSPREE: Replace YOUR_FORM_ID with your actual Formspree endpoint -->
+                <!-- Sign up at formspree.io with hello@scalelocalcontent.com, create a form, paste the ID below -->
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mzdavadd" method="POST">
+                    <input type="hidden" name="_subject" value="New Project Inquiry — ScaleLocalContent">
+                    <input type="text" name="_gotcha" style="display:none;">
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" placeholder="Your name" required>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="you@company.com" required>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="you@company.com" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Company</label>
-                            <input type="text" placeholder="Platform or fund name">
+                            <label for="company">Company</label>
+                            <input type="text" name="company" id="company" placeholder="Platform or fund name">
                         </div>
                         <div class="form-group">
-                            <label>Number of Locations</label>
-                            <select>
+                            <label for="locations">Number of Locations</label>
+                            <select name="locations" id="locations">
                                 <option value="">Select range</option>
-                                <option>10–25 locations</option>
-                                <option>25–50 locations</option>
-                                <option>50–100 locations</option>
-                                <option>100–250 locations</option>
-                                <option>250+ locations</option>
+                                <option value="10-25">10–25 locations</option>
+                                <option value="25-50">25–50 locations</option>
+                                <option value="50-100">50–100 locations</option>
+                                <option value="100-250">100–250 locations</option>
+                                <option value="250+">250+ locations</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Vertical</label>
-                        <select>
+                        <label for="vertical">Vertical</label>
+                        <select name="vertical" id="vertical">
                             <option value="">Select vertical</option>
-                            <option>Dental (DSO)</option>
-                            <option>Medical (MSO)</option>
-                            <option>Aesthetics / MedSpa</option>
-                            <option>Orthopedics</option>
-                            <option>Veterinary</option>
-                            <option>Other</option>
+                            <option value="Dental (DSO)">Dental (DSO)</option>
+                            <option value="Medical (MSO)">Medical (MSO)</option>
+                            <option value="Aesthetics / MedSpa">Aesthetics / MedSpa</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Veterinary">Veterinary</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Project Details</label>
-                        <textarea placeholder="Timeline, current state of your websites, anything we should know..."></textarea>
+                        <label for="details">Project Details</label>
+                        <textarea name="details" id="details" placeholder="Timeline, current state of your websites, anything we should know..."></textarea>
                     </div>
                     <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Project Brief →</button>
+                    <div id="form-status" style="text-align:center;font-size:0.9rem;color:var(--accent);display:none;margin-top:0.5rem;"></div>
                 </form>
             </div>
         </div>
