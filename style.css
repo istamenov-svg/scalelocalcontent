@@ -299,7 +299,7 @@ nav {
 .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
 
 .stats-panel {
-    background: var(--bg-secondary); border: 1px solid var(--border);
+    background: var(--bg-secondary); border: 1px solid var(--border-light);
     border-radius: 16px; padding: 2.5rem;
 }
 .stats-header {
@@ -535,6 +535,7 @@ footer {
     .home-hero .hero-sub { font-size: 1rem; }
     .home-hero-grid { gap: 2rem; }
     .stats-panel { padding: 1.5rem; }
+    .stat-row { flex-direction: column; gap: 0.25rem; padding: 1rem 0; }
     .stat-row .value { font-size: 1.4rem; }
     .grid-3 { grid-template-columns: 1fr; }
     .grid-4 { grid-template-columns: 1fr; }
