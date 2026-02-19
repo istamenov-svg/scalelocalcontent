@@ -503,23 +503,31 @@ footer {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 2.5rem 2rem;
-    text-align: center;
+    overflow: hidden;
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 .team-card:hover {
     border-color: var(--border-light);
     transform: translateY(-3px);
 }
+.team-photo-wrap {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #000;
+}
 .team-photo {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: top;
-    margin: 0 auto 1.5rem;
+    object-position: top center;
     display: block;
-    border: 2px solid var(--border);
+}
+.team-info {
+    padding: 2rem 2rem 2.5rem;
+    text-align: center;
 }
 .team-card h3 {
     font-size: 1.2rem;
