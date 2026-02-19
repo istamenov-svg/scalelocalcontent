@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Creation Service Pricing — Multi-Location Healthcare | ScaleLocalContent</title>
-    <meta name="description" content="Transparent pricing for multi-location SEO content creation. From $500/site for enterprise rollouts to $7,500 for content architecture and strategy.">
+    <title>Pricing — Multi-Location Content Creation | ScaleLocalContent</title>
+    <meta name="description" content="Transparent, volume-scaled pricing for multi-location healthcare content creation. Per-site pricing from $500. LLM Discoverability premium service available.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .roi-block{margin-top:2.5rem}
+        .roi-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);margin-bottom:1rem}
+        .roi-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.5rem}
+        .roi-tabs button{padding:.45rem 1rem;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-size:.78rem;cursor:pointer;transition:all .2s;font-family:inherit}
+        .roi-tabs button:hover{border-color:var(--text-secondary);color:var(--text-secondary)}
+        .roi-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+        .roi-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+        .roi-stat{background:var(--bg-secondary);border-radius:8px;padding:1rem 1.25rem}
+        .roi-stat-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:.35rem}
+        .roi-stat-val{font-size:1.25rem;font-weight:700;color:var(--accent);line-height:1.2}
+        .roi-stat-sub{font-size:.75rem;color:var(--text-muted);margin-top:.15rem}
+        .roi-insight{margin-top:1rem;padding:1rem 1.25rem;background:var(--bg-secondary);border-radius:8px;border-left:3px solid var(--accent)}
+        .roi-insight p{color:var(--text-secondary);font-size:.82rem;line-height:1.65;margin:0}
+        .roi-prompt{font-size:.82rem;color:var(--text-muted);margin-bottom:.75rem}
+        @media(max-width:768px){.roi-stats{grid-template-columns:1fr}}
+    </style>
 </head>
 <body>
 
@@ -38,6 +55,7 @@
     </div>
 </section>
 
+<!-- STANDARD PRICING -->
 <section class="bg-dark">
     <div class="section-inner fade-up">
         <div class="grid-3">
@@ -86,6 +104,14 @@
                 <a href="contact.html" class="btn-secondary" style="width:100%;justify-content:center;">Contact Us</a>
             </div>
         </div>
+
+        <!-- ROI for Standard Tiers -->
+        <div class="roi-block">
+            <div class="roi-label">ROI by Vertical — Standard Content</div>
+            <p class="roi-prompt">Select your industry to see the patient economics behind content investment:</p>
+            <div class="roi-tabs" id="std-tabs"></div>
+            <div id="std-roi"></div>
+        </div>
     </div>
 </section>
 
@@ -115,107 +141,91 @@
 </section>
 
 <!-- PREMIUM SERVICE -->
-<section>
+<section class="bg-dark">
     <div class="section-inner fade-up">
         <div class="section-label" style="color:var(--accent);">Premium</div>
         <h2 class="section-title">LLM Discoverability.</h2>
         <p style="color:var(--text-secondary);line-height:1.7;max-width:700px;margin-bottom:2rem;">Everything in our standard content service, plus provider knowledge pages, entity-structured content, conversational FAQ builds, advanced medical schema, cross-source consistency auditing, and an LLM-optimized website template. <a href="blog/llm-discoverability-healthcare.html" style="color:var(--accent);">How it works →</a></p>
         <div class="grid-3" style="margin-top:2rem;">
-            <div class="card">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--text-muted);margin-bottom:1rem;">Per Location</div>
+            <div class="card" style="border:1px solid var(--accent);">
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-muted);margin-bottom:1rem;">Per Location</div>
                 <h3>Content + Discoverability</h3>
-                <div style="font-size:1.75rem;font-weight:700;color:var(--accent);margin-top:0.75rem;">$1,500–$2,000<span class="price-unit">/site</span></div>
-                <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">Includes standard content package + provider knowledge pages, entity-dense content, conversational FAQs, and advanced schema per location</p>
+                <div style="font-size:1.75rem;font-weight:700;color:var(--accent);margin-top:.75rem;">$1,500–$2,000<span class="price-unit">/site</span></div>
+                <p style="margin-top:.75rem;font-size:.85rem;color:var(--text-muted);">Includes standard content package + provider knowledge pages, entity-dense content, conversational FAQs, and advanced schema per location</p>
             </div>
-            <div class="card">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--text-muted);margin-bottom:1rem;">Per Provider</div>
+            <div class="card" style="border:1px solid var(--accent);">
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-muted);margin-bottom:1rem;">Per Provider</div>
                 <h3>Provider Knowledge Pages</h3>
-                <div style="font-size:1.75rem;font-weight:700;color:var(--accent);margin-top:0.75rem;">$300–$500<span class="price-unit">/provider</span></div>
-                <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">Substantive profiles built from NPI data, board certifications, training, specific procedures, and clinical approach — not a one-paragraph bio</p>
+                <div style="font-size:1.75rem;font-weight:700;color:var(--accent);margin-top:.75rem;">$300–$500<span class="price-unit">/provider</span></div>
+                <p style="margin-top:.75rem;font-size:.85rem;color:var(--text-muted);">Substantive profiles built from NPI data, board certifications, training, specific procedures, and clinical approach — not a one-paragraph bio</p>
             </div>
-            <div class="card">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--text-muted);margin-bottom:1rem;">Template</div>
+            <div class="card" style="border:1px solid var(--accent);">
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-muted);margin-bottom:1rem;">Template</div>
                 <h3>LLM-Optimized Build</h3>
-                <div style="font-size:1.75rem;font-weight:700;color:var(--accent);margin-top:0.75rem;">$5,000–$8,000</div>
-                <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">Website template with full medical schema markup, entity-structured page templates, and conversational FAQ modules built in. Included in full engagements.</p>
+                <div style="font-size:1.75rem;font-weight:700;color:var(--accent);margin-top:.75rem;">$5,000–$8,000</div>
+                <p style="margin-top:.75rem;font-size:.85rem;color:var(--text-muted);">Website template with full medical schema markup, entity-structured page templates, and conversational FAQ modules built in. Included in full engagements.</p>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- ROI CALCULATOR -->
-<section class="bg-dark">
-    <div class="section-inner fade-up">
-        <div class="section-label">Return on Investment</div>
-        <h2 class="section-title">The math behind LLM Discoverability.</h2>
-        <p style="color:var(--text-secondary);line-height:1.7;max-width:700px;margin-bottom:2rem;">Select your industry to see how the economics work. Data sourced from ADA, AmSpa, Ankura, and industry benchmarks.</p>
-        <div class="roi-calc">
-            <div class="roi-select">
-                <button class="active" onclick="showROI('dental')">Dental (DSO)</button>
-                <button onclick="showROI('aesthetics')">Aesthetics / MedSpa</button>
-                <button onclick="showROI('orthopedics')">Orthopedics</button>
-                <button onclick="showROI('veterinary')">Veterinary</button>
-                <button onclick="showROI('medical')">Medical (MSO)</button>
-            </div>
-            <div class="roi-grid" id="roi-metrics">
-                <!-- Populated by JS -->
-            </div>
-            <div class="roi-summary" id="roi-summary">
-                <!-- Populated by JS -->
-            </div>
+        <!-- ROI for Premium -->
+        <div class="roi-block">
+            <div class="roi-label">ROI by Vertical — LLM Discoverability</div>
+            <p class="roi-prompt">Select your industry to see the full ROI case for the premium service:</p>
+            <div class="roi-tabs" id="prem-tabs"></div>
+            <div id="prem-roi"></div>
         </div>
     </div>
 </section>
 
 <!-- EXAMPLE PROJECTS -->
-<section class="bg-dark">
+<section>
     <div class="section-inner fade-up">
         <div class="section-label">Example Projects</div>
         <h2 class="section-title">What an engagement looks like.</h2>
         <div class="grid-3" style="margin-top:2rem;">
             <div class="card">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--text-muted);margin-bottom:1rem;">Small DSO</div>
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-muted);margin-bottom:1rem;">Small DSO</div>
                 <h3>15 locations</h3>
                 <p style="margin-bottom:1rem;">Architecture + 15 location sites</p>
                 <div style="font-size:1.75rem;font-weight:700;color:var(--accent);">$18,750</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;">~2 week delivery</div>
+                <div style="font-size:.8rem;color:var(--text-muted);margin-top:.25rem;">~2 week delivery</div>
             </div>
             <div class="card">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--text-muted);margin-bottom:1rem;">Mid-size Platform</div>
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-muted);margin-bottom:1rem;">Mid-size Platform</div>
                 <h3>50 locations</h3>
                 <p style="margin-bottom:1rem;">Architecture + 50 location sites</p>
                 <div style="font-size:1.75rem;font-weight:700;color:var(--accent);">$45,000</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;">~3 week delivery</div>
+                <div style="font-size:.8rem;color:var(--text-muted);margin-top:.25rem;">~3 week delivery</div>
             </div>
             <div class="card">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--text-muted);margin-bottom:1rem;">Enterprise Rollout</div>
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-muted);margin-bottom:1rem;">Enterprise Rollout</div>
                 <h3>150 locations</h3>
                 <p style="margin-bottom:1rem;">Architecture + 150 location sites + template</p>
                 <div style="font-size:1.75rem;font-weight:700;color:var(--accent);">$87,500</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;">~6 week delivery</div>
+                <div style="font-size:.8rem;color:var(--text-muted);margin-top:.25rem;">~6 week delivery</div>
             </div>
         </div>
         <div class="grid-3" style="margin-top:1.5rem;">
             <div class="card" style="border:1px solid var(--accent);">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:1rem;">Premium — DSO</div>
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);margin-bottom:1rem;">Premium — DSO</div>
                 <h3>20 locations · 60 providers</h3>
                 <p style="margin-bottom:1rem;">Full LLM Discoverability: architecture + content + provider pages + schema + template</p>
                 <div style="font-size:1.75rem;font-weight:700;color:var(--accent);">$63,000–$78,000</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;">~4 week delivery</div>
+                <div style="font-size:.8rem;color:var(--text-muted);margin-top:.25rem;">~4 week delivery</div>
             </div>
             <div class="card" style="border:1px solid var(--accent);">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:1rem;">Premium — MedSpa</div>
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);margin-bottom:1rem;">Premium — MedSpa</div>
                 <h3>10 locations · 25 providers</h3>
                 <p style="margin-bottom:1rem;">Full LLM Discoverability: architecture + content + provider pages + schema + template</p>
                 <div style="font-size:1.75rem;font-weight:700;color:var(--accent);">$35,000–$43,000</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;">~3 week delivery</div>
+                <div style="font-size:.8rem;color:var(--text-muted);margin-top:.25rem;">~3 week delivery</div>
             </div>
             <div class="card" style="border:1px solid var(--accent);">
-                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:1rem;">Premium — Orthopedics</div>
+                <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);margin-bottom:1rem;">Premium — Orthopedics</div>
                 <h3>8 locations · 20 providers</h3>
                 <p style="margin-bottom:1rem;">Full LLM Discoverability: architecture + content + provider pages + schema + template</p>
                 <div style="font-size:1.75rem;font-weight:700;color:var(--accent);">$29,000–$36,000</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;">~3 week delivery</div>
+                <div style="font-size:.8rem;color:var(--text-muted);margin-top:.25rem;">~3 week delivery</div>
             </div>
         </div>
     </div>
@@ -238,100 +248,34 @@
 </footer>
 <script src="main.js" defer></script>
 <script>
-const roiData = {
-    dental: {
-        industry: "Dental (DSO)",
-        patientAcqCost: "$150–$300",
-        patientLTV: "$2,000–$5,000",
-        annualRevPerLocation: "$700K–$1M",
-        newPatientsPerMonth: "25+ per dentist",
-        targetGrowth: "20–50 new patients/month for growth-stage practices",
-        procedureRange: "$700–$6,000 per case (cleaning to implants)",
-        summary: "A 15-location DSO targets 375+ new patients per month across the network. At a conservative $3,000 lifetime value per patient, capturing just 5 additional patients per location per month from AI-driven discovery adds $225,000/month in lifetime value across the platform. Against a one-time content investment of $63K–$78K, the payback period is measured in weeks, not months."
-    },
-    aesthetics: {
-        industry: "Aesthetics / MedSpa",
-        patientAcqCost: "$200–$500",
-        patientLTV: "$2,500–$8,000+",
-        annualRevPerLocation: "~$2M",
-        newPatientsPerMonth: "30–60 new clients",
-        targetGrowth: "3–4 bookings per new client in first 6–12 months",
-        procedureRange: "$536 avg/visit, 2–4 visits/year (Botox, fillers, body contouring)",
-        summary: "MedSpa patients are high-LTV, recurring-revenue clients — Botox every 3–4 months, filler maintenance every 6–12 months. The average location generates ~$2M/year. For a 10-location platform, even a 2–3% increase in new client acquisition from AI-driven discovery — roughly 1–2 additional clients per location per month — adds $128K–$192K in annual lifetime value. The investment in LLM Discoverability pays for itself within the first quarter."
-    },
-    orthopedics: {
-        industry: "Orthopedics",
-        patientAcqCost: "$300–$800",
-        patientLTV: "$5,000–$50,000+",
-        annualRevPerLocation: "$1.5M–$5M",
-        newPatientsPerMonth: "15–30 surgical candidates",
-        targetGrowth: "Referral + direct-to-consumer pipeline growth",
-        procedureRange: "$20K–$75K per procedure (ACL, joint replacement, spine)",
-        summary: "Orthopedic procedures are high-value, low-volume. A single ACL reconstruction represents $20K–$50K, a joint replacement $30K–$75K. For an 8-location practice with 20 surgeons, capturing just 1 additional surgical patient per location per month from AI-driven discovery adds $160K–$600K in monthly revenue. The content investment is a rounding error against the value of even a few incremental cases."
-    },
-    veterinary: {
-        industry: "Veterinary",
-        patientAcqCost: "$75–$200",
-        patientLTV: "$1,500–$4,000",
-        annualRevPerLocation: "$500K–$1.2M",
-        newPatientsPerMonth: "30–50 new patients",
-        targetGrowth: "15–20% of revenue from new client acquisition",
-        procedureRange: "$200–$5,000 per visit (wellness to surgery)",
-        summary: "Pet owners are increasingly using AI assistants to find veterinary care — especially for urgent and specialty needs. A 12-location veterinary network targeting 40 new patients per location per month at $2,500 average lifetime value means each additional patient captured from AI discovery is worth $2,500 over their pet's life. At 3 extra patients per location per month, that's $90K/month in incremental lifetime value across the network."
-    },
-    medical: {
-        industry: "Medical (MSO)",
-        patientAcqCost: "$200–$600",
-        patientLTV: "$3,000–$15,000+",
-        annualRevPerLocation: "$800K–$3M",
-        newPatientsPerMonth: "20–40 new patients",
-        targetGrowth: "Specialty-dependent: primary care vs. specialist referrals",
-        procedureRange: "$150–$25,000+ per episode (office visit to procedure)",
-        summary: "Medical MSOs span specialties with varying economics, but the constant is that patient-provider relationships are long-term. A primary care patient generates $3,000–$5,000/year over a 5–10 year relationship. A specialist patient may represent $10,000–$25,000+ per episode. For a 20-location MSO, even modest improvements in AI-driven discovery — 2 additional patients per location per month — translate to $120K–$600K in annual lifetime value depending on specialty."
-    }
+var V={
+dental:{name:"Dental (DSO)",acq:"$150–$300",ltv:"$2,000–$5,000",rev:"$700K–$1M",pats:"25+ per dentist/mo",grow:"20–50 new patients/mo for growth practices",proc:"$700–$6,000 per case",
+s:"A 25-location DSO investing $26,250 in content (at $750/site + $7,500 architecture) targets 625+ new patients per month across the network. At $3,000 average LTV, each additional patient captured through improved local search visibility returns 4–17x the per-site content cost. Organic SEO typically delivers the lowest acquisition cost of any channel — $50–$150 vs. $300–$500 for paid.",
+p:"A 20-location DSO with 60 providers investing $63K–$78K in full LLM Discoverability targets 500+ new patients per month. At $3,000 average LTV, capturing just 5 additional patients per location per month from AI-driven discovery adds $300,000/month in lifetime value. Payback on the full investment: under 2 weeks. Every provider knowledge page becomes a permanent asset that compounds as AI-driven patient discovery grows."},
+aesthetics:{name:"Aesthetics / MedSpa",acq:"$200–$500",ltv:"$2,500–$8,000+",rev:"~$2M/year",pats:"30–60 new clients/mo",grow:"3–4 bookings per new client in first 6–12 months",proc:"$536 avg/visit · 2–4 visits/yr",
+s:"A 10-location MedSpa platform investing $15,000 in content targets 300–600 new clients per month. With $536 average spend per visit and patients returning 2–4 times annually, each new client represents $1,000–$2,000+ in first-year revenue. Recurring treatments (Botox every 3–4 months, filler every 6–12) push lifetime value well above $5,000. Content-driven organic acquisition costs a fraction of paid channels.",
+p:"A 10-location MedSpa with 25 providers investing $35K–$43K gets every provider positioned as a named, credentialed entity that AI assistants can confidently recommend. MedSpa patients are high-LTV and recurring — a single new Botox client returns $2,000–$4,000/year. Even 1–2 additional AI-driven clients per location per month adds $240K–$960K in annual lifetime value across the platform. Premium investment payback: 30–60 days."},
+orthopedics:{name:"Orthopedics",acq:"$300–$800",ltv:"$5,000–$50,000+",rev:"$1.5M–$5M/year",pats:"15–30 surgical candidates/mo",grow:"Referral + direct-to-consumer pipeline growth",proc:"$20K–$75K per procedure",
+s:"An 8-location orthopedic group investing $13,500 in content targets high-value surgical patients — ACL reconstruction ($20K–$50K), joint replacement ($30K–$75K), spine procedures ($50K+). A single additional surgical patient per location per month captured through improved search visibility represents $160K–$600K in monthly revenue. The entire content investment is recovered with one incremental case.",
+p:"An 8-location group with 20 surgeons investing $29K–$36K gets each surgeon positioned as a specific, credentialed authority in their subspecialty. When a patient asks ChatGPT who does ACL reconstruction in their area, the AI needs entity-specific information to form a recommendation. One additional surgical patient per location per month from AI discovery adds $1.9M–$7.2M in annual revenue. The content investment is a rounding error."},
+veterinary:{name:"Veterinary",acq:"$75–$200",ltv:"$1,500–$4,000",rev:"$500K–$1.2M/year",pats:"30–50 new patients/mo",grow:"15–20% of revenue from new client acquisition",proc:"$200–$5,000 per visit",
+s:"A 12-location veterinary network investing $16,500 in content targets 360–600 new patients per month. At $2,500 average lifetime value per pet-owner relationship, organic search is the most cost-effective acquisition channel. Pet owners search for urgent care, specialty services, and new-pet wellness — all queries where locally differentiated content directly influences provider selection.",
+p:"A 12-location veterinary group with 30 veterinarians investing $36K–$48K positions each vet as a named specialist that AI assistants can recommend. Pet owners increasingly ask AI for vet recommendations — especially for urgent and specialty needs. At $2,500 avg LTV, capturing 3 additional AI-driven patients per location per month adds $90K/month in lifetime value across the network. Full payback within the first quarter."},
+medical:{name:"Medical (MSO)",acq:"$200–$600",ltv:"$3,000–$15,000+",rev:"$800K–$3M/year",pats:"20–40 new patients/mo",grow:"Specialty-dependent: primary care vs. specialist referrals",proc:"$150–$25,000+ per episode",
+s:"A 20-location MSO investing $17,500 in content spans specialties with varying economics — primary care patients generate $3,000–$5,000/year over 5–10 year relationships, specialists $10,000–$25,000+ per episode. Organic search captures patients at the research stage, before they commit to a provider. Content that ranks for condition and treatment queries in each local market feeds the top of the referral funnel.",
+p:"A 20-location MSO with 50 providers investing $55K–$65K gets each specialist positioned as a verifiable authority. When a patient asks an AI to recommend a cardiologist or dermatologist in their area, the model needs substantive provider-specific content to form a recommendation. At $5,000–$15,000 average patient lifetime value, even 2 additional AI-driven patients per location per month translates to $200K–$600K in annual lifetime value."}
 };
-
-function showROI(industry) {
-    const d = roiData[industry];
-    document.querySelectorAll('.roi-select button').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-    
-    document.getElementById('roi-metrics').innerHTML = `
-        <div class="roi-metric">
-            <div class="roi-metric-label">Patient Acquisition Cost</div>
-            <div class="roi-metric-value">${d.patientAcqCost}</div>
-            <div class="roi-metric-sub">per new patient</div>
-        </div>
-        <div class="roi-metric">
-            <div class="roi-metric-label">Patient Lifetime Value</div>
-            <div class="roi-metric-value">${d.patientLTV}</div>
-            <div class="roi-metric-sub">over relationship duration</div>
-        </div>
-        <div class="roi-metric">
-            <div class="roi-metric-label">Annual Revenue / Location</div>
-            <div class="roi-metric-value">${d.annualRevPerLocation}</div>
-            <div class="roi-metric-sub">average per location</div>
-        </div>
-        <div class="roi-metric">
-            <div class="roi-metric-label">New Patient Target</div>
-            <div class="roi-metric-value">${d.newPatientsPerMonth}</div>
-            <div class="roi-metric-sub">per month for growth</div>
-        </div>
-        <div class="roi-metric">
-            <div class="roi-metric-label">Growth Opportunity</div>
-            <div class="roi-metric-value" style="font-size:1rem;">${d.targetGrowth}</div>
-        </div>
-        <div class="roi-metric">
-            <div class="roi-metric-label">Procedure/Visit Revenue</div>
-            <div class="roi-metric-value" style="font-size:1rem;">${d.procedureRange}</div>
-        </div>
-    `;
-    
-    document.getElementById('roi-summary').innerHTML = `<p>${d.summary}</p>`;
-}
-
-// Initialize with dental
-document.addEventListener('DOMContentLoaded', function() { showROI('dental'); });
+function bTabs(cid,rid,fld){var c=document.getElementById(cid);var ks=Object.keys(V);ks.forEach(function(k,i){var b=document.createElement("button");b.textContent=V[k].name;if(i===0)b.classList.add("active");b.addEventListener("click",function(){c.querySelectorAll("button").forEach(function(x){x.classList.remove("active")});b.classList.add("active");rROI(rid,k,fld)});c.appendChild(b)});rROI(rid,ks[0],fld)}
+function rROI(tid,k,fld){var d=V[k];var h='<div class="roi-stats">'+
+'<div class="roi-stat"><div class="roi-stat-label">Patient Acquisition Cost</div><div class="roi-stat-val">'+d.acq+'</div><div class="roi-stat-sub">per new patient</div></div>'+
+'<div class="roi-stat"><div class="roi-stat-label">Patient Lifetime Value</div><div class="roi-stat-val">'+d.ltv+'</div><div class="roi-stat-sub">over relationship</div></div>'+
+'<div class="roi-stat"><div class="roi-stat-label">Revenue / Location</div><div class="roi-stat-val">'+d.rev+'</div><div class="roi-stat-sub">annual average</div></div>'+
+'<div class="roi-stat"><div class="roi-stat-label">New Patient Target</div><div class="roi-stat-val">'+d.pats+'</div><div class="roi-stat-sub">for growth</div></div>'+
+'<div class="roi-stat"><div class="roi-stat-label">Growth Opportunity</div><div class="roi-stat-val" style="font-size:.95rem">'+d.grow+'</div></div>'+
+'<div class="roi-stat"><div class="roi-stat-label">Procedure / Visit Revenue</div><div class="roi-stat-val" style="font-size:.95rem">'+d.proc+'</div></div>'+
+'</div><div class="roi-insight"><p>'+d[fld]+'</p></div>';
+document.getElementById(tid).innerHTML=h}
+document.addEventListener("DOMContentLoaded",function(){bTabs("std-tabs","std-roi","s");bTabs("prem-tabs","prem-roi","p")});
 </script>
 </body>
 </html>
