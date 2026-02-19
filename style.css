@@ -498,6 +498,49 @@ footer {
 .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+/* TEAM */
+.team-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+.team-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-3px);
+}
+.team-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border: 2px solid var(--border);
+}
+.team-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin-bottom: 0.3rem;
+}
+.team-role {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+.team-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
 /* ================================================
    RESPONSIVE — TABLET (1024px)
    ================================================ */
