@@ -143,6 +143,30 @@
     </div>
 </section>
 
+<!-- ROI CALCULATOR -->
+<section class="bg-dark">
+    <div class="section-inner fade-up">
+        <div class="section-label">Return on Investment</div>
+        <h2 class="section-title">The math behind LLM Discoverability.</h2>
+        <p style="color:var(--text-secondary);line-height:1.7;max-width:700px;margin-bottom:2rem;">Select your industry to see how the economics work. Data sourced from ADA, AmSpa, Ankura, and industry benchmarks.</p>
+        <div class="roi-calc">
+            <div class="roi-select">
+                <button class="active" onclick="showROI('dental')">Dental (DSO)</button>
+                <button onclick="showROI('aesthetics')">Aesthetics / MedSpa</button>
+                <button onclick="showROI('orthopedics')">Orthopedics</button>
+                <button onclick="showROI('veterinary')">Veterinary</button>
+                <button onclick="showROI('medical')">Medical (MSO)</button>
+            </div>
+            <div class="roi-grid" id="roi-metrics">
+                <!-- Populated by JS -->
+            </div>
+            <div class="roi-summary" id="roi-summary">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- EXAMPLE PROJECTS -->
 <section class="bg-dark">
     <div class="section-inner fade-up">
@@ -213,5 +237,101 @@
     <div class="footer-bottom">© 2026 Marcon Groupe LLC, operating as ScaleLocalContent. All rights reserved.</div>
 </footer>
 <script src="main.js" defer></script>
+<script>
+const roiData = {
+    dental: {
+        industry: "Dental (DSO)",
+        patientAcqCost: "$150–$300",
+        patientLTV: "$2,000–$5,000",
+        annualRevPerLocation: "$700K–$1M",
+        newPatientsPerMonth: "25+ per dentist",
+        targetGrowth: "20–50 new patients/month for growth-stage practices",
+        procedureRange: "$700–$6,000 per case (cleaning to implants)",
+        summary: "A 15-location DSO targets 375+ new patients per month across the network. At a conservative $3,000 lifetime value per patient, capturing just 5 additional patients per location per month from AI-driven discovery adds $225,000/month in lifetime value across the platform. Against a one-time content investment of $63K–$78K, the payback period is measured in weeks, not months."
+    },
+    aesthetics: {
+        industry: "Aesthetics / MedSpa",
+        patientAcqCost: "$200–$500",
+        patientLTV: "$2,500–$8,000+",
+        annualRevPerLocation: "~$2M",
+        newPatientsPerMonth: "30–60 new clients",
+        targetGrowth: "3–4 bookings per new client in first 6–12 months",
+        procedureRange: "$536 avg/visit, 2–4 visits/year (Botox, fillers, body contouring)",
+        summary: "MedSpa patients are high-LTV, recurring-revenue clients — Botox every 3–4 months, filler maintenance every 6–12 months. The average location generates ~$2M/year. For a 10-location platform, even a 2–3% increase in new client acquisition from AI-driven discovery — roughly 1–2 additional clients per location per month — adds $128K–$192K in annual lifetime value. The investment in LLM Discoverability pays for itself within the first quarter."
+    },
+    orthopedics: {
+        industry: "Orthopedics",
+        patientAcqCost: "$300–$800",
+        patientLTV: "$5,000–$50,000+",
+        annualRevPerLocation: "$1.5M–$5M",
+        newPatientsPerMonth: "15–30 surgical candidates",
+        targetGrowth: "Referral + direct-to-consumer pipeline growth",
+        procedureRange: "$20K–$75K per procedure (ACL, joint replacement, spine)",
+        summary: "Orthopedic procedures are high-value, low-volume. A single ACL reconstruction represents $20K–$50K, a joint replacement $30K–$75K. For an 8-location practice with 20 surgeons, capturing just 1 additional surgical patient per location per month from AI-driven discovery adds $160K–$600K in monthly revenue. The content investment is a rounding error against the value of even a few incremental cases."
+    },
+    veterinary: {
+        industry: "Veterinary",
+        patientAcqCost: "$75–$200",
+        patientLTV: "$1,500–$4,000",
+        annualRevPerLocation: "$500K–$1.2M",
+        newPatientsPerMonth: "30–50 new patients",
+        targetGrowth: "15–20% of revenue from new client acquisition",
+        procedureRange: "$200–$5,000 per visit (wellness to surgery)",
+        summary: "Pet owners are increasingly using AI assistants to find veterinary care — especially for urgent and specialty needs. A 12-location veterinary network targeting 40 new patients per location per month at $2,500 average lifetime value means each additional patient captured from AI discovery is worth $2,500 over their pet's life. At 3 extra patients per location per month, that's $90K/month in incremental lifetime value across the network."
+    },
+    medical: {
+        industry: "Medical (MSO)",
+        patientAcqCost: "$200–$600",
+        patientLTV: "$3,000–$15,000+",
+        annualRevPerLocation: "$800K–$3M",
+        newPatientsPerMonth: "20–40 new patients",
+        targetGrowth: "Specialty-dependent: primary care vs. specialist referrals",
+        procedureRange: "$150–$25,000+ per episode (office visit to procedure)",
+        summary: "Medical MSOs span specialties with varying economics, but the constant is that patient-provider relationships are long-term. A primary care patient generates $3,000–$5,000/year over a 5–10 year relationship. A specialist patient may represent $10,000–$25,000+ per episode. For a 20-location MSO, even modest improvements in AI-driven discovery — 2 additional patients per location per month — translate to $120K–$600K in annual lifetime value depending on specialty."
+    }
+};
+
+function showROI(industry) {
+    const d = roiData[industry];
+    document.querySelectorAll('.roi-select button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    document.getElementById('roi-metrics').innerHTML = `
+        <div class="roi-metric">
+            <div class="roi-metric-label">Patient Acquisition Cost</div>
+            <div class="roi-metric-value">${d.patientAcqCost}</div>
+            <div class="roi-metric-sub">per new patient</div>
+        </div>
+        <div class="roi-metric">
+            <div class="roi-metric-label">Patient Lifetime Value</div>
+            <div class="roi-metric-value">${d.patientLTV}</div>
+            <div class="roi-metric-sub">over relationship duration</div>
+        </div>
+        <div class="roi-metric">
+            <div class="roi-metric-label">Annual Revenue / Location</div>
+            <div class="roi-metric-value">${d.annualRevPerLocation}</div>
+            <div class="roi-metric-sub">average per location</div>
+        </div>
+        <div class="roi-metric">
+            <div class="roi-metric-label">New Patient Target</div>
+            <div class="roi-metric-value">${d.newPatientsPerMonth}</div>
+            <div class="roi-metric-sub">per month for growth</div>
+        </div>
+        <div class="roi-metric">
+            <div class="roi-metric-label">Growth Opportunity</div>
+            <div class="roi-metric-value" style="font-size:1rem;">${d.targetGrowth}</div>
+        </div>
+        <div class="roi-metric">
+            <div class="roi-metric-label">Procedure/Visit Revenue</div>
+            <div class="roi-metric-value" style="font-size:1rem;">${d.procedureRange}</div>
+        </div>
+    `;
+    
+    document.getElementById('roi-summary').innerHTML = `<p>${d.summary}</p>`;
+}
+
+// Initialize with dental
+document.addEventListener('DOMContentLoaded', function() { showROI('dental'); });
+</script>
 </body>
 </html>
