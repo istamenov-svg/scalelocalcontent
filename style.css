@@ -551,6 +551,9 @@ footer {
     color: var(--text-secondary);
     line-height: 1.7;
 }
+.grid-4 .team-card .team-info { padding: 1.5rem 1.5rem 2rem; }
+.grid-4 .team-card p { font-size: 0.8rem; }
+.grid-4 .team-card h3 { font-size: 1.1rem; }
 
 /* Definition-style list (two-column: label + description) */
 .def-list { margin-top: 1rem; }
